@@ -145,7 +145,7 @@ variable "RPTD_ebs_size_tf" {
   default = 10
 }
 variable "RPTD_ami_type" {
-  default = "ami-0128507ee2dc30f01"
+  default = "ami-0edf26a15e7d8b03d"
 }
 
 ## Primary DB Server Variables ##
