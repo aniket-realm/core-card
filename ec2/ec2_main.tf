@@ -31,7 +31,7 @@ resource "aws_instance" "ec2_instances_final" {
   get_password_data      = "true"
   tags = {
     Name               = format("%s_%s", var.ec2_name, count.index + 1)
-    CreatedByTerraform = "true"
+    CreatedByTerraform = "false"
     Environment        = "dev"
   }
 }
