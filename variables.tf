@@ -88,7 +88,7 @@ variable "SVCE_ebs_size_tf" {
   default = 10
 }
 variable "SVCE_ami_type" {
-  default = "ami-04cc58afecc811059"
+  default = "ami-022d7d3bd61b993d6"
 }
 
 
@@ -224,5 +224,5 @@ variable "DC_ebs_size_tf" {
   default = 10
 }
 variable "DC_ami_type" {
-  default = "ami-02278b47324be0323"
+  default = "ami-022d7d3bd61b993d6"
 }
