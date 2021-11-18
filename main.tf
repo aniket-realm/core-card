@@ -254,7 +254,7 @@ module "dist_db_server" {
 #VPC Peering vpc_webserver<->vpc_appserver
 module "peer_vpc_webserver_appserver" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "212335697154"
+  peer_owner_id    = "547853086000"
   peer_vpc_id      = module.vpc_appserver.vpc_id
   local_vpc_id     = module.vpc_webserver.vpc_id
   peer_region      = var.region
@@ -263,7 +263,7 @@ module "peer_vpc_webserver_appserver" {
 
 module "peer_vpc_webserver_kmsserver" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "212335697154"
+  peer_owner_id    = "547853086000"
   peer_vpc_id      = module.vpc_kms.vpc_id
   local_vpc_id     = module.vpc_webserver.vpc_id
   peer_region      = var.region
@@ -272,7 +272,7 @@ module "peer_vpc_webserver_kmsserver" {
 
 module "peer_vpc_webserver_databaseserver" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "212335697154"
+  peer_owner_id    = "547853086000"
   peer_vpc_id      = module.vpc_db.vpc_id
   local_vpc_id     = module.vpc_webserver.vpc_id
   peer_region      = var.region
@@ -283,7 +283,7 @@ module "peer_vpc_webserver_databaseserver" {
 #VPC Peering vpc_appserver<->vpc_kms
 module "peer_vpc_appserver_kms" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "212335697154"
+  peer_owner_id    = "547853086000"
   peer_vpc_id      = module.vpc_appserver.vpc_id
   local_vpc_id     = module.vpc_kms.vpc_id
   peer_region      = var.region
@@ -293,7 +293,7 @@ module "peer_vpc_appserver_kms" {
 #VPC Peering vpc_appserver<->vpc_db
 module "peer_vpc_appserver_db" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "212335697154"
+  peer_owner_id    = "547853086000"
   peer_vpc_id      = module.vpc_appserver.vpc_id
   local_vpc_id     = module.vpc_db.vpc_id
   peer_region      = var.region
@@ -303,7 +303,7 @@ module "peer_vpc_appserver_db" {
 #VPC Peering vpc_kms<->vpc_db
 module "peer_vpc_kms_db" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "212335697154"
+  peer_owner_id    = "547853086000"
   peer_vpc_id      = module.vpc_kms.vpc_id
   local_vpc_id     = module.vpc_db.vpc_id
   peer_region      = var.region
