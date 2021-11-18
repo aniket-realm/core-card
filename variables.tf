@@ -180,7 +180,7 @@ variable "RPLDB_ebs_size_tf" {
   default = 100
 }
 variable "RPLDB_ami_type" {
-  default = "ami-08733330562d5fd0c"
+  default = "ami-0608b01341db388b2"
 }
 
 ## Distribution DB Server Variables ##
