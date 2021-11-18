@@ -28,7 +28,7 @@ variable "web_ebs_size_tf" {
   default = 10
 }
 variable "web_ami_type" {
-  default = "ami-0b944cf4d7235f17f"
+  default = "ami-022d7d3bd61b993d6"
 }
 
 
