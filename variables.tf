@@ -145,7 +145,7 @@ variable "RPTD_ebs_size_tf" {
   default = 10
 }
 variable "RPTD_ami_type" {
-  default = "ami-03f23345a3ba63a33"
+  default = "ami-036c71b9542663b4e"
 }
 
 ## Primary DB Server Variables ##
@@ -163,7 +163,7 @@ variable "DB_ebs_size_tf" {
 }
 
 variable "DB_ami_type" {
-  default = "ami-086216a0006575461"
+  default = "ami-036c71b9542663b4e"
 }
 
 ## Replication DB Server Variables ##
@@ -180,7 +180,7 @@ variable "RPLDB_ebs_size_tf" {
   default = 100
 }
 variable "RPLDB_ami_type" {
-  default = "ami-0608b01341db388b2"
+  default = "ami-036c71b9542663b4e"
 }
 
 ## Distribution DB Server Variables ##
@@ -197,7 +197,7 @@ variable "DIST_DB_ebs_size_tf" {
   default = 100
 }
 variable "DIST_DB_ami_type" {
-  default = "ami-0608b01341db388b2"
+  default = "ami-036c71b9542663b4e"
 }
 
 ## Bastion Host ##
