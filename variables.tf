@@ -180,7 +180,7 @@ variable "RPLDB_ebs_size_tf" {
   default = 100
 }
 variable "RPLDB_ami_type" {
-  default = "ami-086216a0006575461"
+  default = "ami-08733330562d5fd0c"
 }
 
 ## Distribution DB Server Variables ##
@@ -197,7 +197,7 @@ variable "DIST_DB_ebs_size_tf" {
   default = 100
 }
 variable "DIST_DB_ami_type" {
-  default = "ami-086216a0006575461"
+  default = "ami-08733330562d5fd0c"
 }
 
 ## Bastion Host ##
