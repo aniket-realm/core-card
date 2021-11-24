@@ -267,7 +267,7 @@ module "peer_vpc_webserver_kmsserver" {
   peer_vpc_id      = module.vpc_kms.vpc_id
   local_vpc_id     = module.vpc_webserver.vpc_id
   peer_region      = var.region
-  vpc_peering_name = "peering_vpc_webserver_appserver"
+  vpc_peering_name = "peering_vpc_webserver_kmsserver"
 }
 
 module "peer_vpc_webserver_databaseserver" {
@@ -276,7 +276,7 @@ module "peer_vpc_webserver_databaseserver" {
   peer_vpc_id      = module.vpc_db.vpc_id
   local_vpc_id     = module.vpc_webserver.vpc_id
   peer_region      = var.region
-  vpc_peering_name = "peering_vpc_webserver_appserver"
+  vpc_peering_name = "peering_vpc_webserver_dbserver"
 }
 
 
