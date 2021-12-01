@@ -1,9 +1,12 @@
 # VPC-webserver Creation Module#
 module "vpc_webserver" {
   source              = "./VPC-Public"
-  vpc_cidr_block      = "10.0.0.0/24"
-  public_cidrs1       = ["10.0.0.0/26", "10.0.0.64/26"]
-  public_cidrs2       = ["10.0.0.128/26", "10.0.0.192/26"]
+  #vpc_cidr_block      = "10.0.0.0/24"
+  vpc_cidr_block      = var.cidr_web_vpc
+  # public_cidrs1       = ["10.0.0.0/26", "10.0.0.64/26"]
+  # public_cidrs2       = ["10.0.0.128/26", "10.0.0.192/26"]
+  public_cidrs1       = var.cidr_public1
+  public_cidrs2       = var.cidr_public2
   vpc_name            = "Webserver_VPC"
   public_subnet1_name = "Webserver_Public_Subnet"
   public_subnet2_name = "BastionHost_Public_Subnet"
@@ -30,7 +33,7 @@ module "web_server" {
   security_group = module.vpc_webserver.security_group
   subnets        = module.vpc_webserver.public_subnets
 }
-
+#
 # Bastion Host Creation ##
 module "bastion_host" {
   source         = "./Bastion-host"
@@ -41,7 +44,7 @@ module "bastion_host" {
   subnets        = module.vpc_webserver.public_subnets
   b_host_name    = "JumpServer"
 }
-
+#
 ## webserver loadbalancer Configuration ##
 module "nlb" {
   source         = "./nlb"
@@ -254,56 +257,57 @@ module "dist_db_server" {
 #VPC Peering vpc_webserver<->vpc_appserver
 module "peer_vpc_webserver_appserver" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "547853086000"
+  peer_owner_id    = "212335697154"
   peer_vpc_id      = module.vpc_appserver.vpc_id
   local_vpc_id     = module.vpc_webserver.vpc_id
   peer_region      = var.region
-  vpc_peering_name = "peering_vpc_web_app"
+  vpc_peering_name = "peering_vpc_webserver_appserver"
 }
 
+#VPC Peering vpc_webserver<->vpc_KMSserver
 module "peer_vpc_webserver_kmsserver" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "547853086000"
+  peer_owner_id    = "212335697154"
   peer_vpc_id      = module.vpc_kms.vpc_id
   local_vpc_id     = module.vpc_webserver.vpc_id
   peer_region      = var.region
-  vpc_peering_name = "peering_vpc_web_kms"
+  vpc_peering_name = "peering_vpc_webserver_appserver"
 }
 
 module "peer_vpc_webserver_databaseserver" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "547853086000"
+  peer_owner_id    = "212335697154"
   peer_vpc_id      = module.vpc_db.vpc_id
   local_vpc_id     = module.vpc_webserver.vpc_id
   peer_region      = var.region
-  vpc_peering_name = "peering_vpc_web_db"
+  vpc_peering_name = "peering_vpc_webserver_appserver"
 }
 
 
 #VPC Peering vpc_appserver<->vpc_kms
 module "peer_vpc_appserver_kms" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "547853086000"
+  peer_owner_id    = "212335697154"
   peer_vpc_id      = module.vpc_appserver.vpc_id
   local_vpc_id     = module.vpc_kms.vpc_id
   peer_region      = var.region
-  vpc_peering_name = "peering_vpc_app_kms"
+  vpc_peering_name = "peering_vpc_appserver_kms"
 }
 
 #VPC Peering vpc_appserver<->vpc_db
 module "peer_vpc_appserver_db" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "547853086000"
+  peer_owner_id    = "212335697154"
   peer_vpc_id      = module.vpc_appserver.vpc_id
   local_vpc_id     = module.vpc_db.vpc_id
   peer_region      = var.region
-  vpc_peering_name = "peering_vpc_app_db"
+  vpc_peering_name = "peering_vpc_appserver_db"
 }
 
 #VPC Peering vpc_kms<->vpc_db
 module "peer_vpc_kms_db" {
   source           = "./VPC-Peering"
-  peer_owner_id    = "547853086000"
+  peer_owner_id    = "212335697154"
   peer_vpc_id      = module.vpc_kms.vpc_id
   local_vpc_id     = module.vpc_db.vpc_id
   peer_region      = var.region
