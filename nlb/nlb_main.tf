@@ -27,7 +27,7 @@ resource "aws_lb_target_group_attachment" "cc_nlb_target_group_attachment" {
 resource "aws_lb" "aws_nlb_final" {
   name               = "aws-alb-final"
   internal           = false
-  load_balancer_type = "application"
+  load_balancer_type = "network"
 
   subnets = [
     "${var.subnet1}",
@@ -41,7 +41,7 @@ resource "aws_lb" "aws_nlb_final" {
   ip_address_type = "ipv4"
 }
 
-resource "aws_lb_listener" "web_alb_listener" {
+resource "aws_lb_listener" "web_nlb_listener" {
     load_balancer_arn = aws_lb.aws_nlb_final.arn
     port          = 80
     protocol      = "HTTP"
