@@ -29,7 +29,7 @@ variable "KMS_ebs_size_tf" {
   default = 10
 }
 variable "KMS_ami_type" {
-  default = "ami-0f24128138a6f2eaa"
+  default = "ami-0a26e797c5908e853"
 }
 
 ## Web Server Variables ##
@@ -43,7 +43,7 @@ variable "web_ebs_size_tf" {
   default = 10
 }
 variable "web_ami_type" {
-  default = "ami-082fd985a931262f0"
+  default = "ami-022d7d3bd61b993d6"
 }
 
 
@@ -58,7 +58,7 @@ variable "Auth_ebs_size_tf" {
   default = 10
 }
 variable "Auth_ami_type" {
-  default = "ami-0258d389bc7bbbdc8"
+  default = "ami-0b99197c5df6e2b18"
 }
 
 ## ISSU Server Variables ##
@@ -72,7 +72,7 @@ variable "ISSU_ebs_size_tf" {
   default = 10
 }
 variable "ISSU_ami_type" {
-  default = "ami-0c2536d4b4021ccc5"
+  default = "ami-0445f16f03021b129"
 }
 
 
@@ -88,7 +88,7 @@ variable "TNP_ebs_size_tf" {
   default = 10
 }
 variable "TNP_ami_type" {
-  default = "ami-06b3f8e6dc3576785"
+  default = "ami-095f17382125ae454"
 }
 
 
@@ -103,7 +103,7 @@ variable "SVCE_ebs_size_tf" {
   default = 10
 }
 variable "SVCE_ami_type" {
-  default = "ami-04cc58afecc811059"
+  default = "ami-022d7d3bd61b993d6"
 }
 
 
@@ -118,7 +118,7 @@ variable "WKF_ebs_size_tf" {
   default = 10
 }
 variable "WKF_ami_type" {
-  default = "ami-04cc58afecc811059"
+  default = "ami-04d833689dd956adb"
 }
 
 ## File Processing Workflow Server Variables ##
@@ -132,7 +132,7 @@ variable "BAT_ebs_size_tf" {
   default = 10
 }
 variable "BAT_ami_type" {
-  default = "ami-04cc58afecc811059"
+  default = "ami-06016e7961730d650"
 }
 
 ## WCF Server Variables ##
@@ -146,7 +146,7 @@ variable "WCF_ebs_size_tf" {
   default = 10
 }
 variable "WCF_ami_type" {
-  default = "ami-0f4309737a61f885a"
+  default = "ami-0d880ce8006a5f5db"
 }
 
 ## Report Delivery & SSRS Server Variables ##
@@ -160,7 +160,7 @@ variable "RPTD_ebs_size_tf" {
   default = 10
 }
 variable "RPTD_ami_type" {
-  default = "ami-04cc58afecc811059"
+  default = "ami-036c71b9542663b4e"
 }
 
 ## Primary DB Server Variables ##
@@ -178,7 +178,7 @@ variable "DB_ebs_size_tf" {
 }
 
 variable "DB_ami_type" {
-  default = "ami-01f724e8c07ceb576"
+  default = "ami-036c71b9542663b4e"
 }
 
 ## Replication DB Server Variables ##
@@ -195,7 +195,7 @@ variable "RPLDB_ebs_size_tf" {
   default = 100
 }
 variable "RPLDB_ami_type" {
-  default = "ami-01f724e8c07ceb576"
+  default = "ami-036c71b9542663b4e"
 }
 
 ## Distribution DB Server Variables ##
@@ -212,7 +212,7 @@ variable "DIST_DB_ebs_size_tf" {
   default = 100
 }
 variable "DIST_DB_ami_type" {
-  default = "ami-01f724e8c07ceb576"
+  default = "ami-036c71b9542663b4e"
 }
 
 ## Bastion Host ##
@@ -239,5 +239,5 @@ variable "DC_ebs_size_tf" {
   default = 10
 }
 variable "DC_ami_type" {
-  default = "ami-04cc58afecc811059"
+  default = "ami-022d7d3bd61b993d6"
 }
