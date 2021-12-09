@@ -27,7 +27,7 @@ resource "aws_lb_target_group_attachment" "cc_nlb_target_group_attachment" {
 resource "aws_lb" "aws_nlb_final" {
   name               = "aws-alb-final"
   internal           = false
-  load_balancer_type = "network"
+  load_balancer_type = "application"
 
   subnets = [
     "${var.subnet1}",
